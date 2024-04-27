@@ -1,19 +1,16 @@
+import 'package:flutter/material.dart';
 import 'package:dominator_app/loggin/application/sign_in.dart';
 import 'package:dominator_app/loggin/domain/user.dart';
-import 'package:flutter/material.dart';
 import 'package:dominator_app/widgets/text_input.dart';
 import 'package:dominator_app/widgets/avatar.dart';
 import 'package:dominator_app/widgets/button.dart';
 import 'package:dominator_app/widgets/link_message.dart';
-
-
 
 class LogginView extends StatefulWidget {
   const LogginView({super.key});
 
   @override
   State<LogginView> createState() => _LogginView();
-  
 }
 
 class _LogginView extends State<LogginView> {
@@ -59,7 +56,8 @@ class _LogginView extends State<LogginView> {
             )),
         Padding(
           padding: EdgeInsets.symmetric(vertical: size.width * 0.05),
-          child: Button( text: '  Log In  ',
+          child: Button(
+            text: '  Log In  ',
             onPressed: () {
               signIn(user);
             },
@@ -67,7 +65,10 @@ class _LogginView extends State<LogginView> {
         ),
         Padding(
             padding: EdgeInsets.symmetric(vertical: size.width * 0.05),
-            child: const LinkMessage(text: "Did you forget your password?", onPressed: null,)),
+            child: LinkMessage(
+              text: "Did you forget your password?",
+              onPressed: () {},
+            )),
       ])
     ]));
   }

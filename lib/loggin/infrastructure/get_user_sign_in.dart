@@ -8,6 +8,8 @@ Future<User> getSignInUser(User user) async {
     final response =
         await http.get(Uri.parse("https://api.chucknorris.io/jokes/random"));
     if (response.statusCode == 200) {
+      // print(
+      //     " STATUS: ${response.statusCode} \n CONTENT LENGTH: ${response.contentLength} \n HEADERS: ${response.headers} \nBODY: ${response.body}");
       return User.fromJson(jsonDecode(response.body));
     }
     throw (Exception());

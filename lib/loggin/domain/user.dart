@@ -11,7 +11,7 @@ class User {
   factory User.fromJson(Map<String, dynamic> json) {
     User user =  User();
 
-    user.name = json['id'] ?? 0;
+    user.id = json['id'] ?? 0;
     user.name = json['name'] ?? "";
     user.email = json['email'] ?? "";
     user.password = json['password'] ?? "";
