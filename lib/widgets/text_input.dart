@@ -52,29 +52,23 @@ class _TextInput extends State<TextInput> {
   Widget build(BuildContext context) {
     final separation = MediaQuery.of(context).size.height * 0.05;
     return Container(
-      alignment: Alignment.topCenter,
+      // alignment: Alignment.topCenter,
       height: MediaQuery.of(context).size.height * 0.0625,
-      decoration: BoxDecoration(
+      decoration: BoxDecoration( 
           color: currrentColor,
           borderRadius: const BorderRadius.all(Radius.circular(5.0))),
       child: Padding(
-        padding: EdgeInsets.only(
-            bottom: separation * 0.1,
-            left: separation * 0.175,
-            right: separation * 0.175),
-        child: SizedBox(
-          height: MediaQuery.of(context).size.height * 0.05,
-          child: TextFormField(
-            cursorHeight: 22,
-            obscureText: hiddeValue,
-            controller: _controller,
-            decoration: InputDecoration(
-                border: const UnderlineInputBorder(borderSide: BorderSide.none),
-                labelStyle: const TextStyle(height: 3.75),
-                labelText: textLabel,
-                hintText: textHint),
-            onChanged: textFormFieldOnChange,
-          ),
+        padding: EdgeInsets.symmetric(horizontal: separation * 0.175),
+        child: TextFormField(
+          obscureText: hiddeValue,
+          controller: _controller,
+          decoration: InputDecoration(
+              border: const UnderlineInputBorder(borderSide: BorderSide.none),
+              labelText: textLabel,
+              labelStyle: const TextStyle(height: -0.1),
+              hintText: textHint
+              ),
+          onChanged: textFormFieldOnChange,
         ),
       ),
     );
