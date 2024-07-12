@@ -5,6 +5,7 @@ import 'package:dominator_app/widgets/text_input.dart';
 import 'package:dominator_app/widgets/avatar.dart';
 import 'package:dominator_app/widgets/button.dart';
 import 'package:dominator_app/widgets/link_message.dart';
+import 'package:dominator_app/main_view/main_view.dart';
 
 class LogginView extends StatefulWidget {
   const LogginView({super.key});
@@ -67,7 +68,10 @@ class _LogginView extends State<LogginView> {
             padding: EdgeInsets.symmetric(vertical: size.width * 0.05),
             child: LinkMessage(
               text: "Did you forget your password?",
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const MainView()));
+              },
             )),
       ])
     ]));

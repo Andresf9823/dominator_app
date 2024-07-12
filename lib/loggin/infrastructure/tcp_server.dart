@@ -12,9 +12,7 @@ class TcpClient {
 
   void connect() async {
     try {
-      print("TGISSS");
       Socket.connect(serverAddress, port).then((Socket sock) {
-        print("TGISSS");
         socket = sock;
         socket.listen(_dataHandler,
             onError: _onErrorHandler, onDone: disconnect, cancelOnError: false);
