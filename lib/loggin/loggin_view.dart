@@ -25,7 +25,7 @@ class _LogginView extends State<LogginView> {
       Column(children: [
         Padding(
           padding: EdgeInsets.symmetric(vertical: size.width * 0.05),
-          child: const AvatarIcon(),
+          child: const AvatarIcon(circleRadius: 100,),
         ),
         Padding(
           padding:
